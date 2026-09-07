@@ -1,0 +1,12 @@
+{% extends 'trips/base.html' %}
+{% block content %}
+<h1>🌍 Популярные направления</h1>
+{% for city in cities %}
+<div style="border:1px solid #ccc;padding:15px;margin:10px">
+    <h2>{{ city.name }}, {{ city.country }}</h2>
+    <p>💰 ${{ city.price }}</p>
+</div>
+{% endfor %}
+<h2>💡 Советы</h2>
+<ul>{% for tip in tips %}<li>{{ tip }}</li>{% endfor %}</ul>
+{% endblock %}

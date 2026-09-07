@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head><title>Путешествия</title>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="theme-{{ theme|default:'light' }}">
+<nav><a href="/">Главная</a> <a href="/settings/">Настройки</a></nav>
+{% block content %}{% endblock %}
+<footer>© 2024 Путешествия</footer>
+</body>
+</html>

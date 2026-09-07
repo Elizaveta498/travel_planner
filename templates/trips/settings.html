@@ -1,0 +1,23 @@
+{% extends 'trips/base.html' %}
+{% block content %}
+<h1>⚙️ Настройки</h1>
+<form method="POST" action="/save-settings/">
+    {% csrf_token %}
+    <label>Тема:</label>
+    <select name="theme">
+        <option value="light" {% if theme == 'light' %}selected{% endif %}>Светлая</option>
+        <option value="dark" {% if theme == 'dark' %}selected{% endif %}>Темная</option>
+        <option value="blue" {% if theme == 'blue' %}selected{% endif %}>Синяя</option>
+    </select>
+    <br><br>
+    <label>Валюта:</label>
+    <select name="currency">
+        <option value="USD" {% if currency == 'USD' %}selected{% endif %}>USD</option>
+        <option value="EUR" {% if currency == 'EUR' %}selected{% endif %}>EUR</option>
+        <option value="RUB" {% if currency == 'RUB' %}selected{% endif %}>RUB</option>
+    </select>
+    <br><br>
+    <button type="submit">💾 Сохранить</button>
+</form>
+<a href="/">На главную</a>
+{% endblock %}
